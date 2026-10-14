@@ -24,6 +24,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate checked-in public dataset
+        run: python -m unittest discover -s tests -v
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
