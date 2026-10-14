@@ -1,0 +1,49 @@
+{
+  "dataset": "Official Stack Overflow Developer Survey 2025 published aggregate chart data",
+  "raw_sources": [
+    "ai.json",
+    "technology.json",
+    "work.json"
+  ],
+  "source": "https://github.com/StackExchange/Survey/tree/main/packages/archive/2025/json",
+  "license": "ODbL 1.0",
+  "processing_version": "2026-10-15",
+  "original_format": "Nested JSON by question, audience segment, and response option",
+  "profile_before_normalization": {
+    "selected_questions": 11,
+    "selected_question_segment_groups": 49,
+    "observations_in_selected_groups": 795,
+    "observed_response_label_duplicates": 0,
+    "observed_invalid_numeric_observations": 0,
+    "raw_type_of_percent": "fraction between 0 and 1",
+    "raw_type_of_frequency": "integer",
+    "data_level": "published aggregate responses, not person-level rows"
+  },
+  "cleaning_applied": [
+    "Selected 11 relevant questions and their audience segments with adequate published data.",
+    "Removed HTML formatting and collapsed whitespace in question and answer labels.",
+    "Validated numerical response counts and fractions; excluded invalid, negative and out-of-range values.",
+    "Checked response label uniqueness within each question and segment.",
+    "Converted fraction percentages to 0-100 units rounded to two decimal places.",
+    "Kept a separate respondent denominator for each question and segment.",
+    "Created normalized JSON for interactive dashboard and 795-row tidy CSV for analysis."
+  ],
+  "after_normalization": {
+    "questions": 11,
+    "question_segment_groups": 49,
+    "observations": 795,
+    "rows_removed_for_invalid_or_duplicate_records": 0,
+    "output_files": [
+      "data/survey_2025.json",
+      "data/survey_2025_tidy.csv"
+    ]
+  },
+  "analytical_caveats": [
+    "2025 is a single cross-sectional survey snapshot. It cannot establish a time trend.",
+    "Respondents are self-selected, so results do not represent a random sample of all software developers.",
+    "Question denominators vary; do not equate values across questions with individual behavior.",
+    "Multi-select responses are not mutually exclusive and percentages can sum above 100.",
+    "Some questions publish only a subset of categories. Do not force shown percentages to sum to 100.",
+    "This dataset contains official aggregates, so individual-level cross-tabulations cannot be computed."
+  ]
+}
