@@ -64,6 +64,7 @@ With Python 3.10+ and Internet access:
 ```bash
 python -m pip install -r requirements.txt
 python scripts/prepare_data.py
+python scripts/run_sql_analysis.py
 python -m unittest discover -s tests -v
 ```
 
@@ -74,7 +75,7 @@ The script downloads the three official published aggregate JSON source files an
 | Layer | Tools and techniques |
 |---|---|
 | Data collection | Official public Stack Overflow survey archive, JSON |
-| Transformation & analysis | Python, Pandas, CSV, JSON, data validation, EDA |
+| Transformation & analysis | Python, Pandas, NumPy, SQLite SQL, CSV, JSON, data validation, EDA |
 | Front end | Semantic HTML5, CSS3, vanilla JavaScript |
 | Interactive visualization | Plotly.js, responsive charts, custom hover detail |
 | BI / analytics | Filtering, KPIs, subgroup comparisons, percentages, denominator-aware reporting |
@@ -89,13 +90,17 @@ DevPulse-Analytics/
 ├── app.js
 ├── styles.css
 ├── index.html
+├── analysis/
+│   └── queries.sql
 ├── data/
 │   ├── survey_2025.json
 │   └── survey_2025_tidy.csv
 ├── reports/
-│   └── data_quality_report.json
+│   ├── data_quality_report.json
+│   └── eda_findings.md
 ├── scripts/
-│   └── prepare_data.py
+│   ├── prepare_data.py
+│   └── run_sql_analysis.py
 ├── tests/
 │   └── test_data_integrity.py
 ├── requirements.txt
@@ -131,4 +136,6 @@ https://satish1615.github.io/DevPulse-Analytics/
 
 Built by **Satish Singh** as a reproducible Data Analytics, Business Intelligence, Data Visualization and Software Engineering portfolio project.
 
-**Topics:** data-analysis, data-analytics, business-intelligence, data-visualization, python, pandas, exploratory-data-analysis, interactive-dashboard, plotly, javascript, ai-adoption, data-cleaning, developer-survey, github-actions, github-pages.
+**Additional EDA:** [SQL queries](analysis/queries.sql), [cohort comparison findings](reports/eda_findings.md), and [Python SQL analysis runner](scripts/run_sql_analysis.py).
+
+**Topics:** data-analysis, data-analytics, business-intelligence, data-visualization, python, pandas, numpy, sql, sqlite, exploratory-data-analysis, interactive-dashboard, plotly, javascript, ai-adoption, data-cleaning, developer-survey, github-actions, github-pages.
