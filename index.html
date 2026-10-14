@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08121c">
+  <meta name="description" content="DevPulse Analytics: an interactive data intelligence dashboard exploring AI adoption, developer trust, agents and technology trends from the 2025 Stack Overflow Developer Survey.">
+  <title>DevPulse Analytics | Developer Intelligence 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="./" aria-label="DevPulse home"><span class="brandmark">▥</span><span>DevPulse<span class="branddot">.</span></span></a>
+      <div class="topbar-right"><span class="top-tag"><span class="live-dot"></span> 2025 DATA EDITION</span><a class="top-link" href="https://github.com/satish1615/DevPulse-Analytics" target="_blank" rel="noopener">VIEW SOURCE <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> DEVELOPER INTELLIGENCE / 2025</div>
+      <div class="hero-grid"><div><h1>Code, AI, and the<br><span class="gradient-text">people behind it.</span></h1><p class="hero-description">A data-driven look at how developers use AI, what they trust, and the technologies shaping their work.</p></div><div class="hero-stats"><div class="hero-numeral">49<span>,</span>019<span class="plus">+</span></div><div class="hero-stat-label">SURVEY PARTICIPANTS</div><div class="hero-stat-rule"></div><div class="hero-stat-foot">177 countries <span>·</span> Stack Overflow 2025</div></div></div>
+      <div class="metadata"><span><span class="signal"></span> REAL SURVEY DATA</span><span>11 QUESTIONS ANALYZED</span><span>INTERACTIVE VISUALS</span></div>
+    </section>
+    <section class="toolbar" aria-label="Dashboard filters">
+      <div class="filter-group"><label for="audience">AUDIENCE</label><select id="audience"><option value="All Respondents">All respondents</option><option value="Professional Developers">Professional developers</option><option value="Learning to Code">Learning to code</option></select></div>
+      <div class="filter-group"><label for="technology">TECHNOLOGY CATEGORY</label><select id="technology"><option value="Language">Languages</option><option value="Database">Databases</option><option value="Platform">Cloud &amp; infrastructure</option><option value="AIModels">AI models</option></select></div>
+      <div class="toolbar-actions"><button id="reset" type="button" class="soft-button">↺ &nbsp; Reset</button><button id="download" type="button" class="primary-button">↓ &nbsp; Export CSV</button></div>
+    </section>
+    <div id="status" role="status" aria-live="polite" class="status">Loading official survey data...</div>
+    <section class="metrics" aria-label="Key metrics">
+      <article class="metric"><div class="metric-top"><span>DAILY AI USAGE</span><span class="metric-icon">01</span></div><div id="kpi-daily" class="metric-value">--</div><div class="metric-bottom"><span id="kpi-daily-note">Respondents using AI daily</span></div></article>
+      <article class="metric"><div class="metric-top"><span>AI OUTPUT TRUST</span><span class="metric-icon">02</span></div><div id="kpi-trust" class="metric-value">--</div><div class="metric-bottom"><span id="kpi-trust-note">Highly or somewhat trust</span></div></article>
+      <article class="metric"><div class="metric-top"><span>AGENT USAGE</span><span class="metric-icon">03</span></div><div id="kpi-agent" class="metric-value">--</div><div class="metric-bottom"><span id="kpi-agent-note">Daily or weekly at work</span></div></article>
+      <article class="metric metric-accent"><div class="metric-top"><span>MOST USED TECH</span><span class="metric-icon">04</span></div><div id="kpi-tech" class="metric-value text-value">--</div><div class="metric-bottom"><span id="kpi-tech-note">Within selected category</span></div></article>
+    </section>
+    <div class="section-heading"><div><span class="section-kicker">01 / THE ANALYSIS</span><h2>What the data tells us</h2></div><p>Hover for counts. Use filters to compare audiences and technologies.</p></div>
+    <section class="charts">
+      <article class="panel"><div class="panel-head"><div><span class="chart-kicker">ADOPTION</span><h3>How often do developers use AI?</h3></div><span class="chart-index">FIG 01</span></div><div id="chart-adoption" class="chart" aria-label="AI usage chart"></div><p id="insight-adoption" class="takeaway">Loading insights...</p><p id="sample-adoption" class="sample"></p></article>
+      <article class="panel"><div class="panel-head"><div><span class="chart-kicker">SENTIMENT VS CONFIDENCE</span><h3>Using AI does not mean trusting it.</h3></div><span class="chart-index">FIG 02</span></div><div id="chart-trust" class="chart" aria-label="AI sentiment and trust chart"></div><p id="insight-trust" class="takeaway">Loading insights...</p><p id="sample-trust" class="sample"></p></article>
+      <article class="panel"><div class="panel-head"><div><span class="chart-kicker">TECHNOLOGY LANDSCAPE</span><h3 id="tech-title">The most-used languages</h3></div><span class="chart-index">FIG 03</span></div><div id="chart-tech" class="chart chart-tall" aria-label="Top technologies chart"></div><p id="insight-tech" class="takeaway">Loading insights...</p><p id="sample-tech" class="sample"></p></article>
+      <article class="panel"><div class="panel-head"><div><span class="chart-kicker">AGENTIC AI</span><h3>How far have AI agents reached?</h3></div><span class="chart-index">FIG 04</span></div><div id="chart-agents" class="chart chart-tall" aria-label="AI agent adoption chart"></div><p id="insight-agents" class="takeaway">Loading insights...</p><p id="sample-agents" class="sample"></p></article>
+    </section>
+    <section class="findings"><div class="findings-intro"><span class="section-kicker">02 / THE TAKEAWAYS</span><h2>Signals worth<br>paying attention to.</h2><p>Findings update with your selected audience.</p><a href="https://survey.stackoverflow.co/2025/" target="_blank" rel="noopener" class="findings-link">Explore the original survey ↗</a></div><div id="findings-list" class="findings-list" aria-live="polite"></div></section>
+    <section class="method"><div><span class="section-kicker">03 / DATA &amp; METHODOLOGY</span><h2>Transparent by design.</h2><p>Source: <a href="https://github.com/StackExchange/Survey/tree/main/packages/archive/2025/json" target="_blank" rel="noopener">Stack Overflow Developer Survey 2025 official published aggregate data</a>, adapted under the <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener">ODbL 1.0</a>. This dashboard contains <strong>795 normalized aggregate observations</strong> across 11 questions, rather than individual responses. We validate numeric counts, remove nonnumeric chart records, standardize labels, and preserve response denominators. Multi-select questions can sum beyond 100%. Question bases differ, and missing or unreported choices may mean displayed bars do not total 100%. Survey respondents are self-selected, so results are descriptive, not population estimates or causal claims.</p></div><div class="method-card"><span>DATA PIPELINE</span><ol><li>Source official chart data</li><li>Validate values and labels</li><li>Normalize tidy records</li><li>Build interactive visualizations</li></ol><a href="https://github.com/satish1615/DevPulse-Analytics/tree/main/data" target="_blank" rel="noopener">View the processed dataset ↗</a></div></section>
+  </main>
+  <footer><div class="shell footer-inner"><div><strong>DevPulse<span class="branddot">.</span></strong><span>Built by Satish Singh · Data Analytics Portfolio</span></div><a href="https://github.com/satish1615/DevPulse-Analytics" target="_blank" rel="noopener">GitHub repository ↗</a></div></footer>
+</body>
+</html>
